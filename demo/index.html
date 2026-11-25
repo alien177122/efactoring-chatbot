@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<title>Демо чат-бота efactoring</title>
+<link rel="stylesheet" href="../assets/css/chatbot.css">
+<style>
+body { font-family: -apple-system, sans-serif; margin: 0; padding: 40px; background: #eef2f7; }
+h1 { color: #1f2937; }
+p { color: #4b5563; max-width: 720px; }
+.switcher { margin: 16px 0; }
+.switcher button { margin-right: 8px; padding: 6px 12px; border: 1px solid #1f6feb; background: #fff; color: #1f6feb; border-radius: 6px; cursor: pointer; }
+</style>
+</head>
+<body>
+<h1>Демо виджета чат-бота</h1>
+<p>Тестовый сайт. Виджет в правом нижнем углу. Переключите язык страницы, чтобы проверить казахскую версию.</p>
+<div class="switcher">
+  <button onclick="document.documentElement.lang='ru'; location.reload();">RU</button>
+  <button onclick="document.documentElement.lang='kk'; location.reload();">KK</button>
+</div>
+<div id="efc-chatbot-root"></div>
+<script>
+window.EFC_CONFIG = {
+  ajaxUrl: "",
+  nonce: "",
+  qaUrl: "qa.json",
+  lang: document.documentElement.lang && document.documentElement.lang.indexOf('kk')===0 ? 'kk' : 'ru',
+  title: "Чат-бот efactoring",
+  greeting: { ru: "Здравствуйте! Задайте вопрос о факторинге.", kk: "Сәлеметсіз бе! Факторинг туралы сұрақ қойыңыз." },
+  placeholder: { ru: "Введите вопрос...", kk: "Сұрағыңызды жазыңыз..." },
+  managerBtn: { ru: "Связаться с менеджером", kk: "Менеджерге хабарласу" },
+  noAnswer: { ru: "По этому вопросу точного ответа нет. Свяжитесь с менеджером.", kk: "Бұл сұрақ бойынша нақты жауап жоқ. Менеджерге хабарласыңыз." },
+  quickCount: 6,
+  primaryColor: "#1f6feb",
+  logoUrl: "",
+  position: "right",
+  autoOpen: true
+};
+</script>
+<script src="../assets/js/chatbot.js"></script>
+</body>
+</html>
